@@ -15,15 +15,58 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.(js|ts)x?$/,
                 use: {
                     loader: "babel-loader",
-                    options: {
-                        presets: ["env","react"]
-                    }
                 },
                 exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: {
+                                localIndentName: '[name]__[local]--[hash:base64:5]' // css类名
+                            }
+                        }
+                    },
+                    // less
+
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'less-loader',
+                    }
+                ],
+                exclude: /node_modules/
+            },
+
+            // 解析图片资源
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: ['file-loader']
+            },
+
+            //解析 字体
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                loader:['file-loader']
             }
+
         ]
     },
     plugins: [
