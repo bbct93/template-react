@@ -1,6 +1,19 @@
 {
   "presets": [
-    "react",
-    "env"
+    "@babel/react",
+    "@babel/env"
+  ],
+
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/proposal-class-properties"
+    ]
+
   ]
 }
