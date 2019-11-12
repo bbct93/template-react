@@ -1,16 +1,15 @@
 import React, {Component} from "react";
 import {render} from "react-dom";
-import styles from './index.less';
+import "./index.less"
 
-
-class Greeter extends Component{
+class Greeter extends Component {
     render() {
-        return(
+        return (
             <div>
-                <span className={styles.desc}>I am greeter</span>
+                <span className="txt">I am greeter5</span>
             </div>
         )
     }
 }
 
-render(<Greeter />,document.getElementById("root"));
+render(<Greeter/>, document.getElementById("root"));

@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry:  __dirname + "/src/index.jsx",  //入口文件
+    entry: __dirname + "/src/index.jsx",  //入口文件
     output: {
         path: __dirname + "/build",  //存放打包后的文件路径
         filename: "bundle.js" //打包后的文件名
@@ -23,21 +23,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [
-                    {
-                        loader: "style-loader"
-                    },
-                    {
-                        loader: "css-loader",
-                        options: {
-                            modules: {
-                                localIndentName: '[name]__[local]--[hash:base64:5]' // css类名
-                            }
-                        }
-                    },
-                    // less
-
-                ]
+                use: ['style-loader', {loader: 'css-loader', options: {modules: true}}],
             },
             {
                 test: /\.less$/,
@@ -50,11 +36,13 @@ module.exports = {
                     },
                     {
                         loader: 'less-loader',
+                        options: {
+                            javascriptEnabled: true,
+                            modules: true
+                        }
                     }
                 ],
-                exclude: /node_modules/
             },
-
             // 解析图片资源
             {
                 test: /\.(png|svg|jpg|gif)$/,
@@ -64,7 +52,7 @@ module.exports = {
             //解析 字体
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                loader:['file-loader']
+                loader: ['file-loader']
             }
 
         ]
