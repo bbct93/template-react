@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: __dirname + "/src/index.jsx",  //入口文件
+    entry: __dirname + "/src/index.tsx",  //入口文件
     output: {
         path: __dirname + "/build",  //存放打包后的文件路径
         filename: "bundle.js" //打包后的文件名
