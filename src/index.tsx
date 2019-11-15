@@ -3,15 +3,14 @@ import {render} from "react-dom";
 import "./index.less"
 
 class Greeter extends Component<any> {
-    fn = (greetLang: string): void => {
-        console.log(`hello, I am ${greetLang}`);
-
+    fn = (name: string|number): void => {
+        console.log(`hello, this is a simple react frame created by ${name}`);
     };
     render() {
         return (
             <div>
                 <span className="txt">I am greeter</span>
-                <button onClick={this.fn("Dawson")}>click here</button>
+                <button onClick={():void => this.fn('123')}>click here</button>
             </div>
         )
     }
