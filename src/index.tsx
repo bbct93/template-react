@@ -9,7 +9,7 @@ class Greeter extends Component<any> {
     render() {
         return (
             <div>
-                <span className="txt">I am greeter</span>
+                <span className="txt">thx for use this simple frame</span>
                 <button onClick={():void => this.fn('123')}>click here</button>
             </div>
         )
