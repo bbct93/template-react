@@ -1,4 +1,5 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
 module.exports = {
     entry: __dirname + "/src/index.tsx",  //入口文件
@@ -10,7 +11,8 @@ module.exports = {
     devServer: {
         contentBase: "./build",// 本地服务器所加载的页面所在的目录 即index.html所在位置
         historyApiFallback: true,
-        inline: true
+        inline: true,
+        port: 5000
     },
     module: {
         rules: [
