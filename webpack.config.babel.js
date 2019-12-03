@@ -1,6 +1,7 @@
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import WebpackBar from 'webpackbar';
+import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';
 
 
 module.exports = {
@@ -66,6 +67,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: __dirname + "/public/index.template.html"
         }),
-        new WebpackBar()
+        new WebpackBar(),
+        new HardSourceWebpackPlugin()
     ]
 };
