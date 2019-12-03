@@ -16,6 +16,36 @@ useBuiltIns提供了false, entry, usage三种方式:
       }
 ]
 ```
+下面是个依赖说明:
+```angular2
+// webpack配置文件支持import等es6语法
+@babel/register
+
+// babel命令行
+@babel/cli
+
+// babel的核心,转码操作都是基于@babel/core
+@babel/core
+
+// 处理class中的语法
+@babel/plugin-proposal-class-properties
+
+
+// 处理修饰器
+@babel/plugin-proposal-decorators
+
+// 对rest、spread语法进行处理
+@babel/plugin-proposal-object-rest-spread
+
+// 用以解析识别import()动态导入语法---并非转换，而是解析识别(如在路由中导入组件)
+@babel/plugin-syntax-dynamic-import
+
+// 按需引入es6的新的API
+@babel/polyfill
+
+```
+
+
 
 以上:blush:
 

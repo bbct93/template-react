@@ -1,5 +1,8 @@
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import WebpackBar from 'webpackbar';
+import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';
+
 
 module.exports = {
     entry: __dirname + "/src/index.tsx",  //入口文件
@@ -12,7 +15,7 @@ module.exports = {
         contentBase: "./build",// 本地服务器所加载的页面所在的目录 即index.html所在位置
         historyApiFallback: true,
         inline: true,
-        port: 5000
+        port: 5001
     },
     module: {
         rules: [
@@ -63,6 +66,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: __dirname + "/public/index.template.html"
-        })
+        }),
+        new WebpackBar(),
+        new HardSourceWebpackPlugin()
     ]
 };
