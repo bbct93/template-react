@@ -10,21 +10,29 @@ module.exports = {
         path: __dirname + "/build",  //存放打包后的文件路径
         filename: "bundle.js" //打包后的文件名
     },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js', '.less', '.json'],
+        modules: ['node_modules']
+    },
     mode: "development",
     devServer: {
         contentBase: "./build",// 本地服务器所加载的页面所在的目录 即index.html所在位置
         historyApiFallback: true,
         inline: true,
-        port: 5001
+        port: 5001,
     },
+    devtool: "source-map",
+
     module: {
         rules: [
             {
-                test: /\.(js|ts)x?$/,
-                use: {
-                    loader: "babel-loader",
-                },
-                exclude: /node_modules/
+                test: /\.(ts|js)x?$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader'
+                    }
+                ]
             },
             {
                 test: /\.css$/,

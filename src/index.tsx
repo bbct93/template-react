@@ -1,13 +1,7 @@
 import React, {Component} from "react";
 import {render} from "react-dom";
-import "./index.less"
-
-
-function cardItem(props) {
-    return (
-        <div key={props.age}>{props.name}</div>
-    )
-}
+import "./index.less";
+import Welcome from "./Welcome";
 
 class Greeter extends Component {
    state = {
@@ -17,14 +11,13 @@ class Greeter extends Component {
                 {name: 'jack_rose', sex: 'woman', age: 18},
 
             ]
-        }
+        };
 
 
     render() {
-       const { comment } = this.state
         return (
             <div>
-                {comment.map(item => cardItem(item))}
+                <Welcome />
             </div>
         )
     }
