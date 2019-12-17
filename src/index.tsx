@@ -17,7 +17,10 @@ class Greeter extends Component {
     render() {
         return (
             <div>
-                <Welcome />
+                {this.state.comment.map(item => {
+                    return <Welcome name={item.name} />
+                })}
+
             </div>
         )
     }
