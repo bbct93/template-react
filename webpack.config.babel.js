@@ -1,7 +1,7 @@
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import WebpackBar from 'webpackbar';
 import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';
+import path from "path"
 
 
 module.exports = {
@@ -12,7 +12,10 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.less', '.json'],
-        modules: ['node_modules']
+        modules: ['node_modules'],
+        alias: {
+            '@': path.resolve(__dirname, './src'),
+        }
     },
     mode: "development",
     devServer: {

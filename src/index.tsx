@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {render} from "react-dom";
 import "./index.less";
-import Welcome from "./Welcome";
+import Welcome from "@/Welcome";
 
 class Greeter extends Component {
    state = {
