@@ -1,19 +1,23 @@
 import React from "react";
 import { Layout, Menu, Icon } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
+import { Link } from "react-router-dom";
 
 const menuData = [
     {
         menuName: '菜单 1',
-        icon: 'user'
+        icon: 'user',
+        link: '/'
     },
     {
         menuName: '菜单 2',
-        icon: 'video-camera'
+        icon: 'video-camera',
+        link: '/orderTwo'
     },
     {
         menuName: '菜单 3',
-        icon: 'upload'
+        icon: 'upload',
+        link: '/orderThree'
     }
 ];
 
@@ -34,8 +38,10 @@ export default class App extends React.Component<any,any>{
                         <div className="logo" />
                         <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
                             {menuData.map((item,index) => <Menu.Item key={index}>
-                                <Icon type={item.icon} />
-                                <span className="nav-text">{item.menuName}</span>
+                                <Link to={item.link}>
+                                    <Icon type={item.icon} />
+                                    <span className="nav-text">{item.menuName}</span>
+                                </Link>
                             </Menu.Item>)}
                         </Menu>
                     </Sider>
