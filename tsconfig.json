@@ -10,7 +10,7 @@
     "jsx": "react",
     // 生成.js文件版本
     "target": "es5",
-    "module": "commonjs",
+    "module": "esnext",
     // 启用实验性的ES装饰器
     "experimentalDecorators": true,
     // 显示诊断信息
@@ -22,6 +22,9 @@
       "@/*": [
         "src/*"
       ]
-    }
+    },
+    "sourceMap": true,
+    "suppressImplicitAnyIndexErrors":true,
+    "moduleResolution": "node"
   }
 }

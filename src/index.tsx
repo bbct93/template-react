@@ -1,26 +1,12 @@
 import React, {Component} from "react";
 import {render} from "react-dom";
-import "./index.less";
-import Welcome from "@/Welcome";
+import App from "@/pages/layout/index";
 
-class Greeter extends Component {
-   state = {
-            comment: [
-                {name: 'jack', sex: 'man', age: 14},
-                {name: 'rose', sex: 'women', age: 22},
-                {name: 'jack_rose', sex: 'woman', age: 18},
-
-            ]
-        };
-
-
+class Greeter extends Component<any,any> {
     render() {
         return (
             <div>
-                {this.state.comment.map(item => {
-                    return <Welcome name={item.name} />
-                })}
-
+                <App></App>
             </div>
         )
     }
