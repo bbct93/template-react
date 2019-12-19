@@ -1,16 +1,34 @@
 import React, {Component} from "react";
 import {render} from "react-dom";
-import App from "@/pages/layout/index";
-import { HashRouter as Router } from "react-router-dom";
+import Layout from "@/pages/layout/index";
+import { HashRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import routes from "@/routes";
+import loadable from 'react-loadable';
 
-class Greeter extends Component<any,any> {
+
+class App extends Component<any,any> {
     render() {
         return (
             <Router>
-              <App></App>
+                <Switch>
+                    <Layout>
+                        {this.renderRoute()}
+                    </Layout>
+                </Switch>
             </Router>
         )
     }
+
+    renderRoute = () => {
+        return routes.map((item, i) => (
+            <Route
+                key={i}
+                exact={item.exact}
+                path={item.path}
+                component={loadable({ loader: item.render, loading: () => <div /> })}
+            />
+        ));
+    };
 }
 
-render(<Greeter/>, document.getElementById("root"));
+render(<App/>, document.getElementById("root"));

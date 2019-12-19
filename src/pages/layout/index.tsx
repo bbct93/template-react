@@ -12,7 +12,7 @@ const menuData = [
     {
         menuName: '菜单 2',
         icon: 'video-camera',
-        link: '/orderTwo'
+        link: '/addArticle'
     },
     {
         menuName: '菜单 3',
