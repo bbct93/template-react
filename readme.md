@@ -45,7 +45,7 @@ useBuiltIns提供了false, entry, usage三种方式:
 
 /* 选择链，支持 const xxx = obj?.property?.property?.property?
 * if(obj && obj.length>0 && obj[0]  && obj[0].property){
-*        xxx = timeZoneInfo[0].property
+*        xxx = obj[0].property
 * }
 * 可简写为 xxx = obj?.[0]?.property
 */
