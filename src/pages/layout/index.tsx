@@ -5,19 +5,19 @@ import { Link } from "react-router-dom";
 
 const menuData = [
     {
-        menuName: '菜单 1',
+        menuName: 'Article',
         icon: 'user',
         link: '/'
     },
     {
-        menuName: '菜单 2',
+        menuName: 'Game',
         icon: 'video-camera',
-        link: '/addArticle'
+        link: '/game'
     },
     {
-        menuName: '菜单 3',
+        menuName: 'Video',
         icon: 'upload',
-        link: '/orderThree'
+        link: '/video'
     }
 ];
 
