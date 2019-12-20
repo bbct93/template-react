@@ -1,7 +1,8 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import WebpackBar from 'webpackbar';
 import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';
-import path from "path"
+import path from "path";
+import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 
 
 module.exports = {
@@ -79,6 +80,14 @@ module.exports = {
             template: __dirname + "/public/index.template.html"
         }),
         new WebpackBar(),
-        new HardSourceWebpackPlugin()
+        new HardSourceWebpackPlugin(),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.optimize\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorPluginOptions: {
+                preset: ['default', { discardComments: {removeAll: true}}]
+            },
+            canPrint: true
+        })
     ]
 };

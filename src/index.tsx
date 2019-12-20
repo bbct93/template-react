@@ -5,7 +5,6 @@ import { HashRouter as Router, Route, Switch, Redirect } from "react-router-dom"
 import routes from "@/routes";
 import loadable from 'react-loadable';
 
-
 class App extends Component<any,any> {
     render() {
         return (
