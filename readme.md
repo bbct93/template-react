@@ -51,6 +51,9 @@ useBuiltIns提供了false, entry, usage三种方式:
 */
 @babel/plugin-proposal-optional-chaining
 
+// 优化压缩打包后的css，（删除注释，重复样式等)
+optimize-css-assets-webpack-plugin
+
 ```
 
 
