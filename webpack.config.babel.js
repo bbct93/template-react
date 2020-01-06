@@ -3,7 +3,6 @@ import WebpackBar from 'webpackbar';
 import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';
 import path from "path";
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
-import UglifyjsWebpackPlugin from 'uglifyjs-webpack-plugin';
 
 
 module.exports = {
@@ -90,21 +89,5 @@ module.exports = {
             },
             canPrint: true
         }),
-        new UglifyjsWebpackPlugin({
-            uglifyjsOptions: {
-                warnings: false,
-                mangle: true,
-                compress: {
-                    drop_console: true, // console
-                    drop_debugger: true,
-                    pure_funcs: ['console.log'] // 移除console
-                },
-                output: {
-                    comments: false
-                },
-                toplevel: false,
-                ie8: false,
-            }
-        })
     ]
 };
