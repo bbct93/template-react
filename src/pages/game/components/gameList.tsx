@@ -1,7 +1,8 @@
 import React from "react";
 import {Button} from "antd";
+import ThemeButton from "@/pages/game/components/themeButton";
 
-export default class GameList extends React.Component {
+export default class GameList extends React.Component<any, any> {
         constructor(props) {
             super(props);
             this.state = {
@@ -41,7 +42,7 @@ export default class GameList extends React.Component {
         this.setState({
             [e.target.name]: e.target.value
         });
-        console.log('---------->',this.state.name)
+        console.log('---------->',this.state.name);
         e.preventDefault()
     };
 
@@ -75,6 +76,7 @@ export default class GameList extends React.Component {
                         <label>name</label> <input name='name' value={this.state.name} type="text" onChange={this.getNameValue}/>
                         <input type="submit" value="提交" />
                     </form>
+                    <ThemeButton />
                 </div>
                 )
 
