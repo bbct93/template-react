@@ -54,6 +54,9 @@ useBuiltIns提供了false, entry, usage三种方式:
 // 优化压缩打包后的css，（删除注释，重复样式等)
 optimize-css-assets-webpack-plugin
 
+// babel编译过程中服用辅助函数，减小打包文件体积
+@babel-transform-runtime
+@babel/runtime
 ```
 
 

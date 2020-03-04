@@ -1,6 +1,6 @@
 import React from "react";
 import {Button} from "antd";
-import ThemeButton from "@/pages/game/components/themeButton";
+import MiddleComp from "@/pages/game/components/middleComp";
 
 export default class GameList extends React.Component<any, any> {
         constructor(props) {
@@ -13,6 +13,15 @@ export default class GameList extends React.Component<any, any> {
             };
 
             this.swithOn = this.swithOn.bind(this);
+            this.textInput = React.createRef();
+            this.focusTextInput = this.focusTextInput.bind(this);
+        }
+
+        textInput:any;
+
+        focusTextInput() {
+            console.log(this.textInput);
+            this.textInput.current.focus();
         }
 
         addOne = ():void => {
@@ -76,7 +85,16 @@ export default class GameList extends React.Component<any, any> {
                         <label>name</label> <input name='name' value={this.state.name} type="text" onChange={this.getNameValue}/>
                         <input type="submit" value="提交" />
                     </form>
-                    <ThemeButton />
+                    <div style={{border:'1px solid black'}}>
+                        {this.props.xx}
+                    </div>
+                    <br/>
+
+                    <br/>
+                    {/*ref指向最后的一个dom实例*/}
+                    <input id='22222' type="text" ref={this.textInput}/>
+                    <MiddleComp btnTxt={this.props.btnTxt} ref={this.textInput}></MiddleComp>
+                    <input type="text" value="Focus the text input" onClick={this.focusTextInput}/>
                 </div>
                 )
 
