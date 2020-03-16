@@ -18,6 +18,11 @@ const menuData = [
         menuName: 'Video',
         icon: 'upload',
         link: '/video'
+    },
+    {
+        menuName: 'Hooks',
+        icon: 'upload',
+        link: '/hook'
     }
 ];
 
