@@ -4,23 +4,31 @@ import { Button} from "antd";
 import BtnComp from "@/pages/game/components/btnComp";
 
 const btnRef = React.createRef();
-// const BtnComp = React.forwardRef((props, ref) => {
-//     return (
-//         <button className="btn" ref={ref}>
-//             {props.children}
-//         </button>
-//     )
-// });
 
-export default class Game extends React.Component<any>{
-    state:{game: Array<string>, xx: number} = {
+// 定义state的接口
+interface IState {
+    game: Array<string>,
+    xx: number
+}
+
+// 定义props的接口
+interface IProps {
+    sex: string,
+    age: number
+}
+
+
+// <propsInterface, stateInterface>
+export default class Game extends React.Component<IProps, IState>{
+    state = {
         game: ['superMarry', 'Russian', 'tankFight', 'xxxx'],
-        xx: 11
+        xx: 11,
+        name: 'xxx'
     };
 
     btnClick = () => {
         console.log('btnClick----->', btnRef)
-    }
+    };
 
     componentDidMount(): void {
         console.log('当前按钮的class为：', btnRef)
