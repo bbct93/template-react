@@ -17,6 +17,10 @@ interface IProps {
     age: number
 }
 
+interface IGame {
+    testFn(id: string): void
+}
+
 
 // <propsInterface, stateInterface>
 export default class Game extends React.Component<IProps, IState>{
@@ -33,6 +37,7 @@ export default class Game extends React.Component<IProps, IState>{
     componentDidMount(): void {
         console.log('当前按钮的class为：', btnRef)
     }
+
 
     render() {
         const userLink  = <Button type='primary'>xxxxx</Button>;
