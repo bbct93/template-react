@@ -18,7 +18,7 @@ export default class HocComponent extends React.Component<IProp, IState>{
         super(props);  // 绑定this指向
 
         this.state = {
-            name: 'chenTao',
+            name: 'Jack',
             age: 27,
             job: 'coder'
         }

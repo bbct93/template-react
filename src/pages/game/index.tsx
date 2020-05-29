@@ -5,7 +5,7 @@ import BtnComp from "@/pages/game/components/btnComp";
 
 const btnRef = React.createRef();
 
-// 定义state的接口
+// 定义state的接口---------------------------->
 interface IState {
     game: Array<string>,
     xx: number
