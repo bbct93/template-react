@@ -5,9 +5,20 @@ interface IProps {
     [propName: string]: boolean | number
 }
 
-export default class CustomerButton extends React.Component<IProps>{
+interface IState {
+    firstName: string,
+    lastName: string,
+    val: number
+}
+
+export default class CustomerButton extends React.Component<IProps, IState>{
     constructor(props) {
-        super(props)
+        super(props);
+        this.state = {
+            firstName: 'Jack',
+            lastName: 'Smith',
+            val: 0
+        }
     }
 
   showWhat(what) {
@@ -26,13 +37,52 @@ export default class CustomerButton extends React.Component<IProps>{
         }
   }
 
-    render() {
+  get FullName() {
+      console.log('excute fullName function')
+        const {firstName, lastName} = this.state;
+        return `${firstName} &  ${lastName}`
+  }
 
+    changeName() {
+        this.setState({
+            firstName: 'Chen'
+        })
+    }
+
+    test() {
+        let {val: value} = this.state;
+        this.setState({
+            val: value ++
+        })
+    }
+
+    render() {
+        const items = [
+            {
+                message: 'hello'
+            },
+            {
+                message: 'world'
+            },
+            {
+                message: 'welcome'
+            }
+        ]
         return (
             <div>
                 {this.props.showDiv1 && <div>this is div1</div>}
                 {this.props.showDivOrButton ? (<div>this is div</div>) : (<Button type="primary">this is button</Button>)}
                 {this.showWhat(this.props.num)}
+                {
+                items.map((item, index) => (
+                    <div key={index}>{item.message}</div>
+                ))
+            }
+
+                <div onClick={this.test.bind(this)}>test get Fn</div>
+
+            <div>{this.FullName}</div>
+                <Button type="primary" onClick={this.changeName.bind(this)}>change Name</Button>
             </div>
         )
     }
