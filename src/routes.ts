@@ -19,8 +19,8 @@ export default [
     },
     {
         exact: true,
-        path: '/video',
+        path: '/conditionalRendering',
         breadcrumb: '视频',
-        render: (props: any) => import(/* webpackChunkName: "article" */ './pages/video')  // 返回要加载的组件
+        render: (props: any) => import(/* webpackChunkName: "article" */ './pages/conditionalRendering')  // 返回要加载的组件
     },
 ]

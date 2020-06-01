@@ -11,13 +11,13 @@ const menuData = [
     },
     {
         menuName: 'Game',
-        icon: 'video-camera',
+        icon: 'conditionalRendering-camera',
         link: '/game'
     },
     {
-        menuName: 'Video',
+        menuName: 'conditionalRendering',
         icon: 'upload',
-        link: '/video'
+        link: '/conditionalRendering'
     },
     {
         menuName: 'Hooks',
