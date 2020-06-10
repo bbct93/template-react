@@ -1,8 +1,15 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useMemo} from "react";
 import {Button} from "antd";
 
 export default  function Hooks() {
     const [count, setCount] = useState(0);
+    const [firstName, setFirstName] = useState('Jack');
+    const [lastName, setLastName] = useState('Smith');
+
+    // 计算属性
+    const renderFullName = useMemo(() => {
+        console.log('Excute renderFullName');
+        return `${firstName} && ${lastName}`},[firstName, lastName])
     // 副作用： 获取数据(componentDidmount), 设置订阅监听(componentDidUpdate), 手动更改组件dom(componentWillUnmount)
     useEffect(() => {
         document.title = `you clicked ${count} times`
@@ -20,6 +27,8 @@ export default  function Hooks() {
         <div>
             <p>you have clicked {count} times</p>
             <Button type="primary" onClick={() => setCount(count+1)}>Click here</Button>
+            <div>{renderFullName}</div>
+            <Button onClick={() => setFirstName("Tao")}>changeName</Button>
         </div>
     )
 }

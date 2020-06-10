@@ -1,9 +1,7 @@
 import React from "react";
 import {Button} from "antd";
 
-interface IProps {
-    [propName: string]: boolean | number
-}
+
 
 interface IState {
     firstName: string,
@@ -11,7 +9,7 @@ interface IState {
     val: number
 }
 
-export default class CustomerButton extends React.Component<IProps, IState>{
+export default class CustomerButton extends React.Component<any, IState>{
     constructor(props) {
         super(props);
         this.state = {
@@ -44,9 +42,13 @@ export default class CustomerButton extends React.Component<IProps, IState>{
   }
 
     changeName() {
+        const { myEvent } = this.props;  // 子组件向父组件传值
+
         this.setState({
             firstName: 'Chen'
         })
+
+        myEvent('Tao')
     }
 
     test() {
