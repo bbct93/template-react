@@ -4,12 +4,19 @@ import {Button} from "antd";
 
 
 interface IState {
-    firstName: string,
-    lastName: string,
-    val: number
+    firstName: string;
+    lastName: string;
+    val: number;
 }
 
-export default class CustomerButton extends React.Component<any, IState>{
+interface IProps {
+    showDiv1: boolean;
+    showDivOrButton: boolean;
+    num: number;
+    myEvent(name: string): void
+}
+
+export default class CustomerButton extends React.Component<IProps, IState>{
     constructor(props) {
         super(props);
         this.state = {
