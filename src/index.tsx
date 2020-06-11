@@ -4,6 +4,11 @@ import Layout from "@/pages/layout/index";
 import { HashRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import routes from "@/routes";
 import loadable from 'react-loadable';
+import dva from 'dva';
+
+const app = dva();
+
+app.model({ namespace: 'count', ...(require('./models/global.js').default) });
 
 class App extends Component<any,any> {
     render() {
@@ -30,4 +35,5 @@ class App extends Component<any,any> {
     };
 }
 
-render(<App/>, document.getElementById("root"));
+app.router(() => <App />);
+app.start("#root");

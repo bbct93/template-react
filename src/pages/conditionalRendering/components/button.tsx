@@ -35,8 +35,8 @@ export default class CustomerButton extends React.Component<any, IState>{
         }
   }
 
-  get FullName() {
-      console.log('excute fullName function')
+  get FullName() {  // 只要改变了state  包括父组件的state  都会触发
+      console.log('excute fullName function');
         const {firstName, lastName} = this.state;
         return `${firstName} &  ${lastName}`
   }

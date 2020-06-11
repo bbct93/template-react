@@ -48,6 +48,7 @@
     "antd": "^3.26.3",
     "core-js": "^3.4.2",
     "css-loader": "^3.2.0",
+    "dva": "^2.4.1",
     "file-loader": "^4.2.0",
     "less-loader": "^5.0.0",
     "react-loadable": "^5.5.0",

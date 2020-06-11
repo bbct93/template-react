@@ -7,4 +7,7 @@ export default class ThemeButton extends React.Component<any> {
             <Button type='primary'>{this.props.btnTxt}</Button>
         )
     }
+
+
+
 }
