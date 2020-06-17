@@ -9,6 +9,8 @@ import dva from 'dva';
 const app = dva();
 
 app.model({ namespace: 'count', ...(require('./models/global.js').default) });
+app.model({ namespace: 'modelTwo', ...(require('./models/modelTow.js').default) });
+
 
 class App extends Component<any,any> {
     render() {

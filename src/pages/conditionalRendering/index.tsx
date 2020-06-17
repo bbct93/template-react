@@ -4,8 +4,9 @@ import { Button} from "antd";
 import { connect } from 'dva';
 
 
-@connect(({hello }) => ({
-    xxx: hello
+@connect(({hello, modelTwo }) => ({
+    xxx: hello,
+    yyy: modelTwo
 }))
 export default class Video extends React.Component<any, any>{
     constructor(props) {
@@ -13,6 +14,7 @@ export default class Video extends React.Component<any, any>{
         this.state = {
             name: 'xxxxxx'
         }
+        // this.thisPro = this.thisPro.bind(this)
     }
 
     changeState() {
@@ -28,6 +30,10 @@ export default class Video extends React.Component<any, any>{
         })
     }
 
+    thisPro = () => {
+        console.log(this)
+    }
+
 
     getName(name) {
         this.setState({
@@ -39,6 +45,7 @@ export default class Video extends React.Component<any, any>{
         const {count} = this.props;
         return (
             <div>
+                <Button onClick={this.thisPro}>this的指向</Button>
                 <Button onClick={this.addOne.bind(this)}>addOne</Button>
                 <Button onClick={this.changeState.bind(this)}></Button>
                 <CustomerButton myEvent={this.getName.bind(this)} showDiv1={true} showDivOrButton={true} num={2}></CustomerButton>

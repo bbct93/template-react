@@ -1,5 +1,6 @@
 import React from "react";
 import {Button} from "antd";
+import memoize from 'memoize-one';
 
 
 
@@ -42,10 +43,15 @@ export default class CustomerButton extends React.Component<IProps, IState>{
         }
   }
 
+  getFullName = memoize((firstName, lastName) => {
+      console.log('excute memoize');
+      return `${firstName} &  ${lastName}`
+  })
+
   get FullName() {  // 只要改变了state  包括父组件的state  都会触发
       console.log('excute fullName function');
         const {firstName, lastName} = this.state;
-        return `${firstName} &  ${lastName}`
+        return this.getFullName(firstName, lastName);
   }
 
     changeName() {
